@@ -25,6 +25,9 @@ on_ft = 'toml'
 repo = 'jacoborus/tender.vim'
 
 [[plugins]]
+repo = 'joshdick/onedark.vim'
+
+[[plugins]]
 repo = 'majutsushi/tagbar'
 
 [[plugins]]
@@ -94,11 +97,13 @@ repo = 'w0rp/ale'
 hook_add = '''
 let g:ale_open_list = 0
 let g:airline#extentions#ale#enabled = 1
-let g:ale_c_build_dir='/home/kenny/code/pikachu/workspace/build'
+let g:ale_c_build_dir='/home/kenny/shield/code/pikachu/workspace/build'
 let g:ale_linters = {
 \   'cpp': ['clang', 'clangcheck', 'clangtidy', 'cppcheck', 'clang-format', 'cpplint']
 \}
-let g:ale_cpp_clang_options="-I/opt/ros/kinetic/include -I/home/kenny/code/pikachu/workspace/devel/include"
+let g:ale_cpp_clangcheck_options="-extra-arg -Xanalyzer -extra-arg -analyzer-output=text"
+let g:ale_c_clang_options="-std=c++1y -Wall -I/opt/ros/kinetic/include -I/home/kenny/shield/code/pikachu/workspace/devel/include"
+let g:ale_cpp_clang_options="-std=c++1y -Wall -I/opt/ros/kinetic/include -I/home/kenny/shield/code/pikachu/workspace/devel/include"
 
 nmap <silent> <C-p> <Plug>(ale_previous_wrap)
 nmap <silent> <C-n> <Plug>(ale_next_wrap)
@@ -116,6 +121,9 @@ depends = 'depolete.vim'
 
 [[plugins]]
 repo = 'sheerun/vim-polyglot'
+
+[[plugins]]
+repo = 'skielbasa/vim-material-monokai'
 
 [[plugins]]
 repo = 'fatih/vim-go'

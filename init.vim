@@ -47,6 +47,11 @@ set wildignore+=*.swp,*.bak,*.dll,*.o,*.obj,*.pyc.*.exe
 set wildignore+=*.jpg,*.gif,*.png,*.class,*.ln
 set listchars=tab:>-,trail:-,eol:$,nbsp:%
 set colorcolumn=80
+set mouse=a
+set background=dark
+set termguicolors
+let g:loaded_matchparen=1
+set number relativenumber
 " Searching options
 set ignorecase
 set smartcase
@@ -111,11 +116,19 @@ augroup filetype_shell
 augroup END
 
 try
-  colorscheme tender
+  "colorscheme tender
+  "colorscheme onedark
+  colorscheme material-monokai
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme desert
 endtry
 
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+
 augroup file_restore
-  autocmd BufReadPost * if @% !~# '\.git[\/\\]COMMIT_EDITMSG$' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif 
+  autocmd BufReadPost * if @% !~# '\.git[\/\\]COMMIT_EDITMSG$' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 augroup END
