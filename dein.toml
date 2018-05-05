@@ -123,6 +123,9 @@ depends = 'depolete.vim'
 repo = 'sheerun/vim-polyglot'
 
 [[plugins]]
+repo = 'Glench/Vim-Jinja2-Syntax'
+
+[[plugins]]
 repo = 'skielbasa/vim-material-monokai'
 
 [[plugins]]
