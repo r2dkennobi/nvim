@@ -43,6 +43,9 @@ repo = 'easymotion/vim-easymotion'
 repo = 'rhysd/vim-grammarous'
 
 [[plugins]]
+repo = 'pearofducks/ansible-vim'
+
+[[plugins]]
 repo = 'jeetsukumaran/vim-filebeagle'
 hook_add = '''
 let g:filebeagle_suppress_keymaps = 1

@@ -71,6 +71,7 @@ nnoremap <silent> H gT
 nnoremap <silent> L gt
 
 " Special keyboard mapping
+nnoremap <silent> <F2> :call dein#update()<CR>
 nnoremap <silent> <F3> :lcd %:p:h<CR> " Change local directory to file location
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 nnoremap <silent> <F6> :set hlsearch!<CR>
