@@ -52,18 +52,13 @@ return {
       "j-hui/fidget.nvim",
     },
     config = function()
-      local lspconfig = require("lspconfig")
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-      -- Servers with default config (lang-specific servers set up in lang/*.lua)
-      local simple_servers = { "lua_ls", "marksman" }
-      for _, server in ipairs(simple_servers) do
-        lspconfig[server].setup({ capabilities = capabilities })
-      end
+      -- Set capabilities globally; all servers inherit this automatically
+      vim.lsp.config("*", {
+        capabilities = require("cmp_nvim_lsp").default_capabilities(),
+      })
 
       -- lua_ls: suppress "undefined global vim" warnings in nvim config
-      lspconfig.lua_ls.setup({
-        capabilities = capabilities,
+      vim.lsp.config("lua_ls", {
         settings = {
           Lua = {
             diagnostics = { globals = { "vim" } },
@@ -71,6 +66,9 @@ return {
           },
         },
       })
+
+      -- Servers with default config (lang-specific servers enabled in lang/*.lua)
+      vim.lsp.enable({ "lua_ls", "marksman" })
     end,
   },
 

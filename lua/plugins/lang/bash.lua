@@ -5,15 +5,11 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = function(_, _)
-      local lspconfig    = require("lspconfig")
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      lspconfig.bashls.setup({
-        capabilities = capabilities,
+      vim.lsp.config("bashls", {
         filetypes = { "sh", "bash", "zsh" },
-        settings = {
-          bashIde = { shellcheckPath = "shellcheck" },
-        },
+        settings  = { bashIde = { shellcheckPath = "shellcheck" } },
       })
+      vim.lsp.enable("bashls")
     end,
   },
 }

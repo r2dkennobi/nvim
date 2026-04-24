@@ -4,12 +4,10 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = function(_, _)
-      local lspconfig    = require("lspconfig")
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      lspconfig.clangd.setup({
-        capabilities = capabilities,
+      vim.lsp.config("clangd", {
         cmd = { "clangd", "--background-index", "--clang-tidy", "--header-insertion=iwyu" },
       })
+      vim.lsp.enable("clangd")
     end,
   },
 }

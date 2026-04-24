@@ -3,13 +3,10 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = function(_, _)
-      local lspconfig    = require("lspconfig")
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      lspconfig.ts_ls.setup({ capabilities = capabilities })
+      vim.lsp.config("ts_ls", {})
 
       -- eslint LSP: runs ESLint as a language server and auto-fixes on save
-      lspconfig.eslint.setup({
-        capabilities = capabilities,
+      vim.lsp.config("eslint", {
         on_attach = function(_, bufnr)
           vim.api.nvim_create_autocmd("BufWritePre", {
             buffer  = bufnr,
@@ -17,6 +14,8 @@ return {
           })
         end,
       })
+
+      vim.lsp.enable({ "ts_ls", "eslint" })
     end,
   },
 }

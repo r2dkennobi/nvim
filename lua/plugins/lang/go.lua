@@ -29,17 +29,15 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = function(_, _)
-      local lspconfig    = require("lspconfig")
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      lspconfig.gopls.setup({
-        capabilities = capabilities,
+      vim.lsp.config("gopls", {
         settings = {
           gopls = {
-            analyses  = { unusedparams = true },
+            analyses    = { unusedparams = true },
             staticcheck = true,
           },
         },
       })
+      vim.lsp.enable("gopls")
     end,
   },
 }

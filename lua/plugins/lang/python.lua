@@ -3,20 +3,18 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = function(_, _)
-      local lspconfig    = require("lspconfig")
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      lspconfig.pyright.setup({
-        capabilities = capabilities,
+      vim.lsp.config("pyright", {
         settings = {
           python = {
             analysis = {
-              typeCheckingMode = "basic",
-              autoSearchPaths  = true,
+              typeCheckingMode      = "basic",
+              autoSearchPaths       = true,
               useLibraryCodeForTypes = true,
             },
           },
         },
       })
+      vim.lsp.enable("pyright")
     end,
   },
 

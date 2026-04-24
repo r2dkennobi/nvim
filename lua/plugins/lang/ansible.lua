@@ -3,10 +3,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = function(_, _)
-      local lspconfig    = require("lspconfig")
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      lspconfig.ansiblels.setup({
-        capabilities = capabilities,
+      vim.lsp.config("ansiblels", {
         settings = {
           ansible = {
             ansible    = { path = "ansible" },
@@ -14,6 +11,7 @@ return {
           },
         },
       })
+      vim.lsp.enable("ansiblels")
     end,
   },
 }
