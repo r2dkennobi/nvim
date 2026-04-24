@@ -42,8 +42,9 @@ function M.check()
     })
   end
 
-  -- Node neovim package
-  vim.fn.system("node -e \"require('neovim')\" 2>/dev/null")
+  -- Node neovim package (use npm list rather than require() — nvm setups
+  -- install globals under a versioned path that may not be in Neovim's PATH)
+  vim.fn.system("npm list -g --depth=0 neovim 2>/dev/null")
   if vim.v.shell_error == 0 then
     h.ok("neovim npm package: found")
   else
