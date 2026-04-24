@@ -27,3 +27,6 @@ vim.g.loaded_matchparen = 1
 -- Disable unused providers to suppress checkhealth warnings
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
+
+-- Pin Python provider to a dedicated venv (avoids externally-managed-environment errors)
+vim.g.python3_host_prog = vim.fn.expand("~/.venvs/neovim/bin/python")

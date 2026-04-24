@@ -25,15 +25,16 @@ After installing Go, open Neovim and run `:MasonInstall gopls`.
 ### 3. Neovim providers (optional — silences `:checkhealth` warnings)
 
 ```bash
-# Python provider
-pip install --break-system-packages pynvim
+# Python provider — isolated venv so it never conflicts with system Python
+python3 -m venv ~/.venvs/neovim
+~/.venvs/neovim/bin/pip install pynvim
 
 # Node provider
 npm install -g neovim
 ```
 
-> **Note on pip:** macOS Homebrew Python blocks global `pip install` by default.
-> The `--break-system-packages` flag bypasses that restriction for this one package.
+> **Note on Python:** the config pins `python3_host_prog` to `~/.venvs/neovim/bin/python`,
+> so Neovim always finds pynvim regardless of which Python is active in your shell.
 
 ### 4. tmux (if you use tmux)
 
