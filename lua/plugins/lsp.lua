@@ -31,6 +31,7 @@ return {
     dependencies = { "williamboman/mason.nvim" },
     opts = {
       ensure_installed = {
+        "gopls",        -- Go LSP (here for eager install; also in mason-lspconfig)
         "shellcheck",   -- bash linter
         "shfmt",        -- bash formatter
         "ruff",         -- python linter + formatter
