@@ -238,4 +238,6 @@ These work in visual (`v`) and operator-pending mode (e.g., `d`, `c`, `y`):
 
 **fidget.nvim:** The spinner in the bottom-right shows LSP progress (e.g., "pyright: indexing"). It disappears when servers are ready — if it stays spinning, run `:LspInfo` to debug.
 
-**`:checkhealth`:** Run this after first install to verify all providers (Python, Node, etc.) are found. Fix any `ERROR` lines — `WARN` lines are usually fine.
+**`:checkhealth config`:** Run this after first install to verify all prerequisites (Go, gopls, pynvim, Node, tmux, Nerd Font). Fix any `ERROR` lines before using LSP features.
+
+**`:checkhealth`:** Broader built-in check covering providers, Treesitter, and all plugins. `WARN` lines are usually fine to ignore.
