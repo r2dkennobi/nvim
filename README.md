@@ -2,6 +2,49 @@
 
 Lua-based config using [lazy.nvim](https://github.com/folke/lazy.nvim). Migrated from Dein + VimScript.
 
+## First-time Setup
+
+Run these once after cloning / on a new machine, then open Neovim (plugins install automatically).
+
+### 1. Nerd Font (required for icons in lualine and Telescope)
+
+```bash
+brew install --cask font-meslo-lg-nerd-font
+```
+
+Then set your terminal font to **MesloLGS Nerd Font** (iTerm2: Preferences → Profiles → Text → Font).
+
+### 2. Go (required for gopls LSP)
+
+```bash
+brew install go
+```
+
+After installing Go, open Neovim and run `:MasonInstall gopls`.
+
+### 3. Neovim providers (optional — silences `:checkhealth` warnings)
+
+```bash
+# Python provider
+pip install --break-system-packages pynvim
+
+# Node provider
+npm install -g neovim
+```
+
+> **Note on pip:** macOS Homebrew Python blocks global `pip install` by default.
+> The `--break-system-packages` flag bypasses that restriction for this one package.
+
+### 4. tmux (if you use tmux)
+
+Add to `~/.tmux.conf` to enable focus-events (makes `autoread` work correctly):
+
+```
+set-option -g focus-events on
+```
+
+---
+
 ## File Structure
 
 ```
