@@ -25,4 +25,5 @@ require("lazy").setup({
 }, {
   install = { colorscheme = { "kanagawa", "desert" } },
   checker  = { enabled = false },
+  rocks    = { enabled = false },  -- no plugins need luarocks; avoids hererocks warning
 })

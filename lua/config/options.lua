@@ -23,3 +23,7 @@ opt.incsearch      = true
 opt.list           = true
 
 vim.g.loaded_matchparen = 1
+
+-- Disable unused providers to suppress checkhealth warnings
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
