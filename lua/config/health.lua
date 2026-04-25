@@ -27,7 +27,7 @@ function M.check()
   -- Python provider venv + pynvim
   local venv_python = vim.fn.expand("~/.venvs/neovim/bin/python")
   if vim.fn.executable(venv_python) == 1 then
-    vim.fn.system(venv_python .. " -c 'import pynvim' 2>/dev/null")
+    vim.fn.system({ venv_python, "-c", "import pynvim" })
     if vim.v.shell_error == 0 then
       h.ok("pynvim: found in ~/.venvs/neovim")
     else

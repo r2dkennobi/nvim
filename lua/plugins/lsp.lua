@@ -50,6 +50,7 @@ return {
     dependencies = {
       "williamboman/mason-lspconfig.nvim",
       "j-hui/fidget.nvim",
+      "hrsh7th/cmp-nvim-lsp",
     },
     config = function()
       -- Set capabilities globally; all servers inherit this automatically
