@@ -4,10 +4,10 @@
 set -e
 
 echo "==> Installing Homebrew packages..."
-brew install node ansible shellcheck go tree-sitter
+brew install node ansible shellcheck go
 
 echo "==> Installing npm global packages..."
-npm install -g neovim
+npm install -g neovim tree-sitter-cli
 
 echo "==> Installing ansible-lint..."
 pip3 install --user ansible-lint
