@@ -1,6 +1,7 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    commit = "f197a15b",
     build = ":TSUpdate",
     dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
     event = { "BufReadPre", "BufNewFile" },
@@ -15,7 +16,6 @@ return {
         highlight = { enable = true },
         indent    = { enable = true },
 
-        -- Semantic text objects: vaf, vif, ]m, [m, etc.
         textobjects = {
           select = {
             enable    = true,
@@ -40,7 +40,6 @@ return {
     end,
   },
 
-  -- Auto-close/rename HTML, JSX, TSX tags
   {
     "windwp/nvim-ts-autotag",
     ft = { "html", "javascript", "typescript", "javascriptreact", "typescriptreact", "xml" },
