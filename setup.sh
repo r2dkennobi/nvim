@@ -4,7 +4,7 @@
 set -e
 
 echo "==> Installing Homebrew packages..."
-brew install node ansible shellcheck go
+brew install node ansible shellcheck go tree-sitter
 
 echo "==> Installing npm global packages..."
 npm install -g neovim
