@@ -18,9 +18,6 @@ echo "    -> Set your terminal font to 'MesloLGS Nerd Font' after this script"
 echo "==> Installing npm global packages..."
 npm install -g neovim tree-sitter-cli
 
-echo "==> Installing ansible-lint..."
-pip3 install --user ansible-lint
-
 echo "==> Setting up Python provider venv..."
 python3 -m venv ~/.venvs/neovim
 ~/.venvs/neovim/bin/pip install pynvim
