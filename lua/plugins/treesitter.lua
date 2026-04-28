@@ -6,12 +6,14 @@ return {
     build = ":TSUpdate",
     dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
     config = function()
-      require("nvim-treesitter").install({
-        "lua", "python", "go", "c", "cpp", "rust",
-        "bash", "yaml", "toml", "json", "markdown", "markdown_inline",
-        "html", "css", "javascript", "typescript", "tsx",
-        "vim", "vimdoc",
-      })
+      vim.schedule(function()
+        require("nvim-treesitter").install({
+          "lua", "python", "go", "c", "cpp", "rust",
+          "bash", "yaml", "toml", "json", "markdown", "markdown_inline",
+          "html", "css", "javascript", "typescript", "tsx",
+          "vim", "vimdoc",
+        })
+      end)
 
       vim.api.nvim_create_autocmd("FileType", {
         callback = function()
