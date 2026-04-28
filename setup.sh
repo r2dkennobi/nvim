@@ -4,7 +4,12 @@
 set -e
 
 echo "==> Installing Homebrew packages..."
-brew install node ansible shellcheck go
+if command -v nvm &>/dev/null || [ -d "$HOME/.nvm" ]; then
+  echo "    NVM detected — skipping brew node (use nvm to manage Node)"
+  brew install ansible shellcheck go
+else
+  brew install node ansible shellcheck go
+fi
 
 echo "==> Installing npm global packages..."
 npm install -g neovim tree-sitter-cli
