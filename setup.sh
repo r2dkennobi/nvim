@@ -6,10 +6,14 @@ set -e
 echo "==> Installing Homebrew packages..."
 if command -v nvm &>/dev/null || [ -d "$HOME/.nvm" ]; then
   echo "    NVM detected — skipping brew node (use nvm to manage Node)"
-  brew install ansible shellcheck go
+  brew install neovim ansible shellcheck go
 else
-  brew install node ansible shellcheck go
+  brew install neovim node ansible shellcheck go
 fi
+
+echo "==> Installing Nerd Font (required for icons)..."
+brew install --cask font-meslo-lg-nerd-font
+echo "    -> Set your terminal font to 'MesloLGS Nerd Font' after this script"
 
 echo "==> Installing npm global packages..."
 npm install -g neovim tree-sitter-cli
