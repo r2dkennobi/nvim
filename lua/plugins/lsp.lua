@@ -16,7 +16,6 @@ return {
         "clangd",       -- C/C++
         "gopls",        -- Go
         "lua_ls",       -- Lua (for editing this config)
-        "ansiblels",    -- Ansible
         "bashls",       -- Bash
         "ts_ls",        -- TypeScript / JavaScript
         "marksman",     -- Markdown
@@ -38,7 +37,6 @@ return {
         "stylua",       -- lua formatter
         "eslint_d",     -- JS/TS linter
         "prettier",     -- JS/TS/JSON/CSS/YAML/Markdown formatter
-        "ansible-lint", -- Ansible linter
         "clang-format", -- C/C++ formatter
       },
     },
