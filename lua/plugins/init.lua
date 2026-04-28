@@ -20,7 +20,6 @@ require("lazy").setup({
   { import = "plugins.lang.cpp" },
   { import = "plugins.lang.bash" },
   { import = "plugins.lang.typescript" },
-  { import = "plugins.lang.ansible" },
   { import = "plugins.lang.markdown" },
 }, {
   install = { colorscheme = { "kanagawa", "desert" } },

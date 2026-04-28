@@ -62,7 +62,7 @@ set-option -g focus-events on
       editor.lua        ← telescope, oil, which-key, conform, toggleterm, render-markdown
       git.lua           ← gitsigns, fugitive
       treesitter.lua    ← syntax trees + text objects
-      syntax.lua        ← ansible-vim, Jinja2 (non-Treesitter)
+      syntax.lua        ← Jinja2 (non-Treesitter)
       lsp.lua           ← mason, nvim-lspconfig, nvim-cmp
       lang/             ← per-language LSP + tool configs
 ```
@@ -208,11 +208,6 @@ These work in visual (`v`) and operator-pending mode (e.g., `d`, `c`, `y`):
 - **Lint:** eslint (auto-fix on save)
 - **Format on save:** yes (prettier via conform)
 - **JSX/TSX:** nvim-ts-autotag auto-closes and renames tags
-
-### Ansible
-- **LSP:** ansiblels (task/module completion, hover docs)
-- **Lint:** ansible-lint (best practices, deprecated syntax)
-- **Syntax:** ansible-vim (richer than Treesitter YAML for playbooks)
 
 ### Markdown
 - **LSP:** marksman (link completion, `[[wiki]]` links, document outline via `gr`)
